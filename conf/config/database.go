@@ -14,7 +14,7 @@ type GeneralDB struct {
 }
 
 func (g *GeneralDB) Dsn() string {
-	return fmt.Sprintf("%s:%s@tcp(%s)/%s?%s&loc=local",
+	return fmt.Sprintf("%s:%s@tcp(%s)/%s?%s&loc=Local",
 		g.Username,
 		g.Password,
 		g.Host,

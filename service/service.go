@@ -2,6 +2,7 @@ package service
 
 import (
 	"account_backend/conf/config"
+	"account_backend/integration/storage/mysql"
 	"github.com/gin-gonic/gin"
 	"runtime"
 )
@@ -13,8 +14,8 @@ func InitResource() {
 	// 加载配置文件
 	config.InitConfig("./conf/application.yml")
 
-	// mysql
-	//mysql.InitMysql()
+	//mysql
+	mysql.InitMysql()
 
 	// redis
 	//redis.InitRedis()
