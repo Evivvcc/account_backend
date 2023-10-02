@@ -1,6 +1,7 @@
 db:
-  dbname: wuyi
-  host: localhost:3306
-  port: 3306
-  username: root
-  password: evivv612889
+  my_account_backend:
+    dbname: wuyi
+    host: localhost:3306
+    port: 3306
+    username: root
+    password: evivv612889

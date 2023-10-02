@@ -22,6 +22,6 @@ func main() {
 	r := router.InitRouter()
 
 	// 启动服务
-	service.Run(r)
+	service.RunServer(r)
 
 }
