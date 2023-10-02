@@ -1,3 +1,9 @@
+server:
+  port: 8080
+  pprof: true
+  use_json_number: true
+  path_prefix: account  # 配置为自己的服务标识即可
+
 db:
   my_account_backend:
     dbname: wuyi

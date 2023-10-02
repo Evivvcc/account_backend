@@ -3,8 +3,11 @@ package service
 import (
 	"account_backend/conf/config"
 	"account_backend/integration/storage/mysql"
+	"fmt"
 	"github.com/gin-gonic/gin"
+	"net/http"
 	"runtime"
+	"time"
 )
 
 func InitResource() {
@@ -30,5 +33,18 @@ func InitResource() {
 }
 
 func RunServer(router *gin.Engine) {
+	port := fmt.Sprintf(":%d", config.OneConfig.Server.Port)
+	srv := &http.Server{
+		Addr:           port,
+		Handler:        router,
+		ReadTimeout:    20 * time.Second,
+		WriteTimeout:   20 * time.Second,
+		MaxHeaderBytes: 1 << 20,
+	}
+	srv.RegisterOnShutdown(registerOnShutdown)
+	router.Run()
+}
+
+func registerOnShutdown() {
 
 }
